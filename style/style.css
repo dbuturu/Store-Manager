@@ -3,6 +3,7 @@
     height: 40vh;
     width: 30vw;
     padding: 5rem;
+    padding-block-start: 6rem;
     margin: 1rem;
     display: block;
     position: fixed;
