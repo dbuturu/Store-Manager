@@ -7,7 +7,7 @@ function row_adder(table_name) {
 
     rows[0]=`
     <tr id="${id}" class="row">
-        <td class="colunm id"><input class="cell" type="text" onChange="auto_row_adder()"></td>
+        <td class="colunm id"><input class="cell" type="number" onChange="auto_row_adder()"></td>
         <td class="colunm name"><input class="cell" type="text" onChange="auto_row_adder()"></td>
         <td class="colunm cost"><input class="cell" type="text" onChange="auto_row_adder()"></td>
         <td class="colunm amount"><input class="cell" type="number" min="1" onChange="auto_row_adder()"></td>
