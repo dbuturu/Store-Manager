@@ -87,7 +87,18 @@
     background: #eeeeee;
 }
 
-table {
+.grand{
+    float: right;
+    height: 1.5rem;
+    margin: 1rem;
+}
+
+.grand_total{
+    font: 600;
+    font-size: 1.3rem;
+}
+
+.table_root{
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 80%;

@@ -1,3 +1,5 @@
+let totals=[]
+
 function row_adder(table_name) {
     let id,rows= [],
     table = document.querySelector('tbody.table_body')
@@ -17,14 +19,19 @@ function row_adder(table_name) {
     }
 }
 
-function row_sum(cost, amount, row) {
-    if (cost && amount)
+function row_sum(cost, amount, row, id) {
+    let total_cost, total
+
+    if (cost && amount){
+        total = cost*amount
         total_cost = row.querySelector('td.total_cost').querySelector('input.cell')
-        total_cost.value =cost*amount
+        total_cost.value = total
+        totals[id]=total
+    }
 }
 
 function auto_row_adder() {
-    let  id, name, cost, amount, row,
+    let  id, name, cost, amount, row, grand_total,
     rows=document.querySelectorAll('tr.row')
     for (row of rows) {
         id = row.querySelector('td.id').querySelector('input.cell').value
@@ -32,10 +39,14 @@ function auto_row_adder() {
         cost = row.querySelector('td.cost').querySelector('input.cell').value
         amount = row.querySelector('td.amount').querySelector('input.cell').value
         if (id && name && cost && amount) {
-            row_sum(cost, amount, row)
+            row_sum(cost, amount, row, id)
         }else{
             return null
         }
+        grand_total= totals.reduce((sum, num) =>{
+            return sum + num
+        })
+        document.querySelector('span.grand_total').innerHTML = grand_total
     }
     if (amount) {
         row_adder('pos')
