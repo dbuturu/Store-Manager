@@ -17,7 +17,7 @@
 <body class="root">
     <header class="app-bar">
         <div>
-            <h1><i class="fas fa-store logo"></i></h1>
+            <h1 class="title"><i class="fas fa-store logo"></i></h1>
         </div>
     </header>
     <main class="body">
@@ -33,7 +33,31 @@
             </ul>
         </div>
         <section class="main">
-            
+            <form action="" method="post">
+                <label for="username" class="username_label">
+                    User's name
+                </label>
+                <input class="input input-text" type="text" name="username" placeholder="Enter your username" required
+                    autofocus />
+                <label for="password" class="password_label">
+                    Password<br>
+                    <small class="hints">Must have at lest 6 characters</small>
+                </label>
+                <input class="input input-text" type="password" name="password" placeholder="password"
+                    required />
+                <label for="role" class="role_label">
+                    Role<br>
+                    <small class="hints">Role of the user</small>
+                </label>
+                <select class="input input-select" name="role" id="" required >
+                    <optgroup>
+                        <option value="">Please select role</option>
+                        <option value="sale attendant">sale attendant</option>
+                        <option value="admin">admin</option>
+                    </optgroup>
+                </select>
+                <button class="input input-button" id="submit" type="submit">SAVE</button>
+            </form>
         </section>
     </main>
     <footer class="footer">

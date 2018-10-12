@@ -35,8 +35,20 @@
 }
 
 .input-text{
-    border: #fffffffe;
+    border: #fff7f7fe;
     background: transparent;
+}
+
+.input-select{
+    border: #fff7f7fe;
+    background: transparent;
+    width: 12rem;
+}
+
+.hints{
+    font: 200;
+    font-size: 0.8rem;
+    color: #333333;
 }
 
 a{
