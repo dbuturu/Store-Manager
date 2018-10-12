@@ -121,6 +121,13 @@
     background: transparent;
 }
 
+.quantity .cell,
+.min_quantity .cell,
+.cost .cell
+{
+    width: 70px;
+}
+
 .right_side_bar{
     grid-area: right_side_bar;
     padding: 1rem;
