@@ -23,14 +23,829 @@
     <main class="body">
         <div class="left_side_bar">
             <ul class="links">
-                <li class="link"><a href="/pos.html"><i class="fas fa-shopping-cart"></i> Point of sale</a></li>
-                <li class="link"><a href="/sales_history.html"><i class="fas fa-history"></i> SALES HISTORY</a></li>
                 <li class="link"><a href="/products.html"><i class="fas fa-tags"></i> PRODUCTS</a></li>
                 <li class="link"><a href="/inventory.html"><i class="fas fa-boxes"></i> INVENTORY</a></li>
+                <li class="link"><a href="/sales_history.html"><i class="fas fa-history"></i> SALES HISTORY</a></li>
+                <li class="link"><a href="/inventory_manager.html"><i class="fas fa-sitemap"></i> INVENTORY MANAGER</a></li>
+                <li class="link"><a href="/all_sales_history.html"><i class="fas fa-chart-line"></i> ALL SALES HISTORY</a></li>
+                <li class="link"><a href="/add_sale_attendant.html"><i class="fas fa-user-plus"></i>ADD SALE ATTENDANT</a></li>
+                <li class="link"><a href="/products_category.html"><i class="fas fa-sitemap"></i> PRODUCT CATEGORY</a></li>
             </ul>
         </div>
         <div class="main">
-            <table class="table_root"></table>
+            <table class="table_root">
+                <thead class="table_head">
+                    <th class="colunm">ID</th>
+                    <th class="colunm">NAME</th>
+                    <th class="colunm">COST</th>
+                    <th class="colunm">CATEGORY</th>
+                    <th class="colunm">QUANTITY</th>
+                    <th class="colunm">MINIMUM QUANTITY</th>
+                    </tr>
+                </thead>
+                <tbody class="table_body">
+                    <tr id="1" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="E32DD429-53FB-C132-7A56-0BCAE81B1251"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="CKL34NRU2XW"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="7.01KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="MYX77IHU2VU"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="2" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="9855BE01-226A-1522-8D43-E605F6EBB53C"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="XZE55KLS2FC"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="7.15KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="RYU29ALJ3UC"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="3" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="DBBE2EAA-2D3D-D98D-27DB-D4F2AC4A4229"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="LHD67YUD1NW"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.25KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="KDM42HGC7PX"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="4" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="586F446D-7D52-1BB4-249B-8ADFBCA88C09"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="KVM07CAC7VM"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.25KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="WKT14HET8BB"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="5" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A16C46FD-9AEF-8FF4-03B3-7EFC301DCA97"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="IYV03OOO1UD"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="2.11KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="JMB31EBD5KR"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="6" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A5F01544-D144-12D9-A45E-901850C48007"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="HVX56XYZ7BW"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="7.73KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="LFV27SGZ8NN"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="7" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="AA562521-1601-41D3-1B9F-1737BCD987A8"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="HIF14MXL7GG"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.19KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="CQK11IUO9EG"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="8" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="2749D885-7797-D078-AB8B-1D7F8F010BE0"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="FZD69ENI7QL"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.74KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="LGK02NNE2SF"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="9" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="346430EF-B1CE-9752-A405-51FD767DD5B3"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="LHT42KMO2ZB"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.25KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="UAI18EAI6TG"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="10" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="F53A820C-AFA8-947F-6D2D-D19704720433"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="MZH81JYL5HO"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.29KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="LPI36KKX9EN"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="11" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="E5DE8449-B2B4-533B-6C1D-8219DDF29CF9"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="EER80YOG2QL"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.35KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="NNC05RSI5PZ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="12" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="BB9D21E1-99B6-D0DB-2E1C-431CB37271EA"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="TXT82JZB6BB"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.41KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ERS76BXP6EJ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="13" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="6F220295-62FA-30C5-B7B4-1E2CB1F25DF8"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="LKE78KVE6SU"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.62KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="QED13KJI5TZ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="14" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="5F2A5D62-B629-0024-EDF8-34789FE51EB1"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="TZL50PPG3KS"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.45KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="XXD26YKU1UX"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="15" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="187FFA75-9E8E-3F7E-AD36-26B6B9F51D46"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="AEW36RVG3GZ"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.39KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="GWZ77BRV0VL"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="16" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="26196356-6C1C-77FF-1BC2-1E0FF9F4CE6F"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="ITK65UEG9QB"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.56KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="AOP07OTP2ZY"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="17" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="13F460B8-A7B8-A759-C226-E0CFB9F2AF82"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="NYH20XVJ3GH"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.61KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="DUQ69LAM7JD"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="18" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A619E6BF-E113-5C67-86D6-FED4A3FE123C"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="OQQ44PXZ1VD"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.90KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="OAM56NIH9VQ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="19" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="8283719F-89F0-5D5F-83DF-7BA9A21EFDD4"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="YGB87DSU7KH"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.68KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="UFC10MYW0QH"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="20" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A773BEED-22D3-1D78-16B1-F4E867400B16"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="YRW63ECS2SN"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.84KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="NPU28SLU6SE"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="21" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="E326D619-00DB-9E6B-CA43-64C1BE467247"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="GIV33ADW3SE"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.07KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="TWX30DEN2PX"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="22" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="DC4589E2-1699-5839-1820-EDFBDEA3293D"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="SMU90XPZ4EC"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.86KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="URL05NES6FI"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="23" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="64123F74-717F-28E4-FBAC-41870586AE97"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="AFV78GGV7QF"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.96KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="EKO42NII8ZY"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="24" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="1A7C300B-2CE4-21AD-6C2B-47E7747E219C"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="LIL32YRQ0RU"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.09KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="FTZ32ZMR8TJ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="25" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="F1F7BB34-97D2-6D0F-8A29-70EEDAF992FD"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="UWK86SIX6QF"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.22KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="CMP95HCI3GV"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="26" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="04AB6847-17D7-C64A-B320-B24F7B79D3CF"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="OTJ28PWN0OI"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.45KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="XLR25FKF0GA"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="27" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="DA6BA89D-49D8-D5AB-FEE3-720C3214FB81"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="URE35XMY3YP"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.49KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="YMJ76LKE8YL"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="28" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="C8ED40B1-DD97-281D-4FFE-8B62764F7FC1"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="FLB84CGS9NJ"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.31KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="HLC74LCW0UU"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="29" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="15D8C522-0B3E-DF42-F5D3-0D04E6C7D9A5"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="QLY65QUF4BY"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.16KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="SDX93CNM4SA"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="30" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="3107FDDB-2C58-4BAD-2FAB-76B0407BB81E"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="KIF47RHD7FP"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.39KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="FNW51FVV2FH"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="31" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="BD2C112D-690D-EE38-6D32-68CECCEEA8CC"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="WIE04MXC5LR"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.78KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="MSX27JPH0TZ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="32" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="7CEF830D-4A89-0AE2-E4C8-538EF2417B9A"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="SIT91MQV5ET"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.46KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ZGH11KBO5WP"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="33" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="64F32C0D-C9F1-C272-0E80-11DD280B1A71"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="ZUC58ZNF2ZZ"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.72KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ALP77RJR0WF"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="34" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="419F21A6-D623-55BF-26E4-27589A9AC9C5"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="SXS85EJQ5CN"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.14KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="SAV76JHR2VQ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="35" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A64029AB-6697-FD5A-A11D-C183125D570C"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="YTT01PIX4RH"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="2.26KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="OMN70MDD3QM"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="36" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="37C626F3-D25B-DEF1-A738-E946ECD9C3E4"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="LUU60BZI0YE"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.26KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="JZZ83VAH4IH"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="37" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="73E0F7C9-C40A-5610-1044-26D5876B0FF7"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="BQU14LUN9WK"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.50KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ZII77SAX4HT"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="38" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="EAD11FB3-7413-8331-CA20-4B6D2CB96E93"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="XAW13XMM3FA"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.05KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="QDC58VQW1HU"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="39" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="50133413-B90A-208B-9A39-7FE3FA5B9DCE"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="IUS77GGQ5AG"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.31KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="SGM73GYN4YL"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="40" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="DCF39AE2-C7E1-1049-E907-00C43B2309F5"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="DJR21GFN1DW"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.68KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="MBH50GMO0WO"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="41" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="172C6ABD-64AF-AB76-3599-7F0AABD9BA39"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="QBM56RAX2KW"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.01KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="JTC73GAD6JO"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="42" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="0AC1306A-CAB3-2C81-E340-F81821B64E1B"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="KLQ28XBK0UW"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="2.52KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="RXT07SZN6LR"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="43" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="5F66488D-924A-937A-7D8B-61570C59BB2C"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="PKF78QQL4NG"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.69KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="UCK08EJO3LE"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="44" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="B143F8DE-CC49-B630-4312-CF57AD558F77"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="IOG70FKL7ZK"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.15KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ABD90ICD3NP"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="45" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="F5F61BA2-F193-CEA0-CC9E-71713BFE2642"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="XMV92QXZ4GG"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.53KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ZZG23NUL0UF"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="46" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="9C657F7D-3EAA-0E66-50A9-D7FADD727BC6"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="BVC19KJH1YT"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.93KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="GRC99PVD7TD"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="47" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="46AAB97A-41C1-7B50-C521-C9CF4566512B"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="ULC35XXW3DF"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.89KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="RPY35RCF4BO"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="48" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A44F2D6C-27EB-29EB-B682-9222164AFE34"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="KIH49UPH5VW"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.93KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ZEQ65HFR6HB"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="49" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="D044FD75-25BC-4E86-A7CB-5F0AC20E0542"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="GWP31FBH8KZ"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.56KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="RKM85DIL7KA"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="50" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="38A222C6-14F9-5058-E50F-EB312970BB5B"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="QJH48UJS4DR"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="7.35KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="IIS53EOP9OO"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="51" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A2594EF4-D570-5438-3966-36755181548D"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="YNG22WGK7HT"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.95KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="AMF87YWI9JH"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="52" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="D26F47A1-A60C-1ABD-E9A1-7FFD478795F9"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="UXD74BHG4HM"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.32KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="GML44VIH6EX"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="53" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A1A7C5DA-51ED-5A11-7E55-5FC2C8FEC4C5"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="ZPY19UXL2EE"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.39KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="JPX06YXD3GV"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="54" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="F7471273-B269-0E7B-11AA-5DE6E8846A73"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="VSJ17GAG0CZ"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.51KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="HFU24CSZ2OK"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="55" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="4B22E01E-3A18-9B43-8934-4DA005704E17"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="ICV25YKD9IN"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="7.41KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="JFP99YPE4ZY"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="56" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="94C63BE2-F943-31F6-1371-0DCEB95B7B1B"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="YZQ79WPI1OC"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.50KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="RDY13NGV9XT"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="57" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="B6D37CC2-63C5-1FA8-C717-122F0AD7A6AD"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="SNX84MCN3OW"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="2.06KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="JZM82GMA2SJ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="58" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="06BEBDD6-48FC-C2A3-F16A-CB8B136754C7"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="IGH22SFD3OA"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.46KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="DNZ79DBB6YX"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="59" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="D75B1921-56D9-1BE3-3338-019857CB0D67"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="CZX04MDV1BC"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.69KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ZAU61USM9ML"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="60" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="6BD6F582-1D63-D484-A909-F22F63038AF3"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="DRI34QKS8SM"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.84KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="MMR75CED1JG"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="61" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="B2A1AA30-DB8C-1E41-11C1-08A1E861BA12"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="ONB84TWL3QD"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.11KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="QKH37DMH1WA"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="62" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="B1EBE6A5-8199-D063-EF1F-0D934C0768D7"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="EYR30LCY5XB"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="0.29KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="DJK94YUE7IS"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="63" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="B5D18FD1-DB08-E085-A197-11D1C7EE1DB7"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="LUB20UBE0RY"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.42KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="JRU20RNE3WY"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="64" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="F437638F-16B5-72FC-719C-80307CAE4C16"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="DHD77VDD2FK"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.19KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="NBH16AAR8XE"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="65" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="864E0C2F-634F-2CCF-0E81-80BC5903EFAB"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="TUG10OGS0YK"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.09KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="UDE64TJY1JX"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="66" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="C8392F5E-3046-A3E1-352F-A2559D8DF342"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="QFS80LSR8GO"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.49KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="QQR40UBE4GC"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="67" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="CF8B1699-8412-0E79-EB99-D40E11335E3A"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="PJR70ASZ4AX"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.23KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="EFO14CSQ2OX"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="68" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="933430E9-300F-C963-8767-037E26D25048"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="KRN92NIG6YP"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.76KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="THF94RBJ2IZ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="69" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="1B6643C9-52F3-204B-D6FC-CAD632B56C48"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="VOT27WRE0UE"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.61KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ETI42LSW2QC"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="70" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A47C367A-FDD1-596C-9D1C-020C3F83AE6F"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="MUX25OTV3BI"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.20KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="OUV30NQF3JP"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="71" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="BCDBFBEC-2FDD-0F65-60DE-7BBF4F72F3E4"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="KYA48SKN4DU"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.93KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="BDW38ERJ7AT"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="72" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="7A979605-7AD6-275A-E13E-0AA676C7B9A6"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="XNS47NKN0PG"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.05KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ODL65LSP9YY"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="73" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="3B76988D-6EFF-7431-5B9B-06DDC04E07C5"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="XXC77JTC3JY"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.48KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="RXD48BHL4IE"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="74" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="1EE5ADDC-0340-3E80-88CF-14574CFCDCD9"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="AOQ94VWE0SN"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.08KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="GAC12KSY9AF"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="75" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="AFD21ADC-70FB-BD17-6CD9-83FFADF1A68C"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="FJZ78JPY1AE"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.08KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="PKB79UDC9UK"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="76" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="AB7A9EBF-0DCC-3598-E8EB-1B3D758A0575"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="IBX75DKQ6UM"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="2.85KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="VUS46EWL4IJ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="77" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="90B92567-049B-9F23-1311-6F0A041A1E84"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="UPZ97RZD8TL"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.37KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="WXF46GZD7YR"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="78" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="2B239389-F71F-F85E-8187-CD13739C4558"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="NEY46YZX7TN"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.35KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="SRN66NMW5SN"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="79" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="F119D45F-E071-B683-DD18-4D04D65210E0"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="OPP65NCN2CF"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.82KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="PKN15XEZ6NR"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="80" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="D6BC8828-5995-D31D-58BA-0129CAC4B733"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="WIU02FYO3IF"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="8.61KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="TVG83VUH9QL"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="81" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="483C1C51-8569-B2D5-BB8C-CB792EB6F9EC"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="XWE05COM8DV"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.93KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="QVH22CUO3HC"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="82" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="FBA523EC-CF3F-F90E-6408-AF0202DA5B0B"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="MLI28ARJ5KB"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="2.19KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="CUO39CDI9EG"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="83" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="4AF8BD64-26AE-D74D-CD0B-B4F2FB1E6878"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="NEO60JKK4XK"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.02KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="YQW63MGP9II"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="84" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="2CB0D02E-D3E6-305C-3083-81134C4DAC0D"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="BUO98HQP4TZ"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="2.73KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ZVG38KSP2SF"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="85" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="35174D05-5313-F965-2001-0D80ECE31D7E"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="NDE97ENA3PK"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.04KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="FGP16XPY2BV"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="86" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="55C02D54-D3A1-2842-4ED2-9FA948841D16"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="IAV48EIK8AU"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.66KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="OFL32CTF6BD"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="87" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="FDCFC0A9-183C-F248-5FA1-EFE2BF6A51A6"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="PJZ74WBM3XL"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="9.53KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ZCV36SLJ1KO"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="88" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="E29938E8-0684-F937-553E-91DC2A79035B"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="GBR94XRN3WS"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="7.74KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="NZI32VVD2XS"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="89" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="BBD36D54-2454-4F3F-4312-487A16C4A6AC"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="IHX75WXB2PO"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.13KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="ZOG04LXA5GM"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="90" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="35C48676-F780-0CE9-67DE-D5A3BCC30995"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="KQL63UZM6LS"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.35KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="NHP82BVT6XX"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="91" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="F4945AEC-1B2F-10D2-CCC3-53EBD2B8C1BA"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="FHX33YER8NY"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="3.76KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="WAC02FZM7SG"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="92" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="056CCC06-BE66-A197-573F-5C9A1D70BEB6"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="MIG79NQB1ZE"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="1.51KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="XPI83QYU9SC"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="93" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="75612E86-0D12-CCD4-914E-35C8022B1ECA"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="SOT55LXV4RY"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="2.62KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="RHE32AQL1DC"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="94" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="F83E34A9-E0E2-98D6-9428-5E596D87175E"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="OSS96XTI0VK"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.73KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="XXM56MAW9YJ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="95" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="AC231D6D-A6F0-8218-0354-344659105139"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="TXG73PUG1KF"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.89KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="XQO11EGH2WV"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="96" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="9D270AD6-D61A-24A6-24FE-B83CF4B04F5B"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="HZI73OUS3PD"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.43KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="BWI68WLQ5SE"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="97" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="E2014FFE-861D-F19B-F006-7D1CFBBCB64C"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="AWY78BSH4JU"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="4.14KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="CYW36LUT4MK"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="98" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="192CFDDE-DB85-0D81-A745-0536BC3B96C7"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="TXL74ABA2MV"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="7.51KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="JBP45HMC3GG"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="99" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="B4058064-19AB-6AC0-F8D2-0E5F6946E761"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="TOB89ZTY4MK"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="6.94KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="WWL49BRW8KR"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                    <tr id="100" class="row">
+                        <td class="colunm id"><input class="cell" type="text" value="A40CA803-F454-B979-DE4B-34DCAF29D372"></td>
+                        <td class="colunm name"><input class="cell" type="text" value="UGS45HCI8ZF"></td>
+                        <td class="colunm cost"><input class="cell" type="text" value="5.88KSH"></td>
+                        <td class="colunm category"><input class="cell" type="text" value="SZK44EUJ2KJ"></td>
+                        <td class="colunm quantity"><input class="cell" type="number" value="100"></td>
+                        <td class="colunm min_quantity"><input class="cell" type="number" value="20"></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="right_side_bar"></div>
     </main>
