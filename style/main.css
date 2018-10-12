@@ -102,7 +102,7 @@
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 80%;
-    margin: 1rem;
+    margin: 2rem;
 }
 
 .table_head{
@@ -113,6 +113,7 @@
     height: 1rem;
     border: 1px solid #222222;
     text-align: left;
+    padding: 0.4rem;
 }
 
 .cell{
