@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style/main.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <script src="/script/index.js"></script>
+    <script src="script/index.js"></script>
     <title>Store Manager</title>
 </head>
 <body class="root">
@@ -19,12 +19,17 @@
     </header>
     <main class="body">
         <section class="main">
-            <form action="" method="post">
-                <input class="input input-text" type="text" name="username" placeholder="Enter your username" required autofocus/>
-                <input class="input input-text" type="password" name="password" placeholder="Enter your password" required/>
-                <button class="input input-button" id="submit" type="submit">SIGN-IN</button>
-                <p class="message"><a href='#'> Forgot password?</a></p>
-                <p class="message"><a href='signup.html'> Dont have an Account? </a></p>
+            <form id="login" action="" method="post">
+                <label for="username" class="username_label">
+                    User's name
+                </label>
+                <input id="username" class="input input-text" type="text" name="username" placeholder="Enter your username" required autofocus/>
+                <label for="password" class="password_label">
+                    Password<br>
+                    <small class="hints"></small>
+                </label>
+                <input id="password" class="input input-text" type="password" name="password" placeholder="Enter your password" required/>
+                <button class="input input-button" id="submit" type="button" onclick="login()">SIGN-IN</button>
             </form>
         </section>
     </main>

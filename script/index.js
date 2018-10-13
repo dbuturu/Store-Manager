@@ -1,4 +1,8 @@
-let totals=[]
+let totals=[],
+    users={
+        'user':{'password':'password','role':'sale attendant'},
+        'admin':{'password':'password','role':'admin'}
+    }
 
 function row_adder(table_name) {
     let id,rows= [],
@@ -50,5 +54,21 @@ function auto_row_adder() {
     }
     if (amount) {
         row_adder('pos')
+    }
+}
+
+function login() {
+    let user,form,username,password,destiation
+
+    form=document.querySelector('form#login')
+    username=form.querySelector('input#username.input').value
+    password=form.querySelector('input#password.input').value
+
+    if (users.hasOwnProperty(username)) {
+        user = users[username]
+        if (user.password=password) {
+            destiation=(user.role=='sale attendant')?'pos.html':(user.role=='admin')?'inventory_manager.html':'#'
+            location=destiation
+        }
     }
 }
