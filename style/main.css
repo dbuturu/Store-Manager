@@ -82,6 +82,10 @@
     background: #614DBF;
 }
 
+.active_link{
+    background: #614DBF;
+}
+
 .main{
     grid-area: main;
     background: #eeeeee;
