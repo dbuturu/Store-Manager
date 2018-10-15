@@ -82,6 +82,11 @@
     background: #614DBF;
 }
 
+.active_link{
+    background:#614DBF;
+    color: #dddddd;
+}
+
 .main{
     grid-area: main;
     background: #eeeeee;
@@ -107,6 +112,7 @@
 
 .table_head{
     background: #4773B9;
+    color: #dddddd;
 }
 
 .colunm{

@@ -72,3 +72,14 @@ function login() {
         }
     }
 }
+
+onload=(()=>{
+    let links = document.querySelectorAll('li.link'),link
+
+    links.forEach((link)=>{
+        if(link.firstChild.pathname==location.pathname){
+            link.classList.add('active_link')
+            link.classList
+        }
+    })
+})
