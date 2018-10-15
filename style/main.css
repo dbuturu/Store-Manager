@@ -83,7 +83,8 @@
 }
 
 .active_link{
-    background: #614DBF;
+    background:#614DBF;
+    color: #dddddd;
 }
 
 .main{
@@ -111,6 +112,7 @@
 
 .table_head{
     background: #4773B9;
+    color: #dddddd;
 }
 
 .colunm{
