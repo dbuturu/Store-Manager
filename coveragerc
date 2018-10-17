@@ -1,0 +1,13 @@
+[run]
+omit =
+   venv/*
+   /vscode
+   .vscode
+   .idea
+   __pycache__/
+   .pytest_cache/
+   *.pyc
+   .cache/
+
+[report]
+ignore_errors = True
