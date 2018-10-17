@@ -31,4 +31,8 @@ class Product(Resource):
     @end_point.doc('create a product')
     @end_point.marshal_with(message, code=201)
     def post(self):
-        return {}, 201
+        data = end_point.payload
+        product.add(data['name'], data['cost'], data['amount'])
+        return {'message': 'success',
+                'product': product.get(product.id)
+                }, 201
