@@ -1,30 +1,27 @@
-import os
-
 
 class Config(object):
     DEBUG = False
-    CSRF_ENABLED = True
-    SECRET = os.getenv('SECRET')
-    DATABASE_URI = os.getenv('DATABASE_URL')
 
 
-class DevelopmentConfig(Config):
+class Development(Config):
     DEBUG = True
+    ENV = 'development'
 
 
-class TestingConfig(Config):
+class Testing(Config):
     TESTING = True
-    DATABASE_URI = 'local-test_db'
     DEBUG = True
+    ENV = 'testing'
 
 
-class ProductionConfig(Config):
+class Production(Config):
     DEBUG = False
     TESTING = False
+    ENV = 'production'
 
 
 app_config = {
-    'development': DevelopmentConfig,
-    'testing': TestingConfig,
-    'production': ProductionConfig,
+    'development': Development,
+    'testing': Testing,
+    'production': Production,
 }

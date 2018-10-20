@@ -48,3 +48,19 @@ class Product(Resource):
         return {'message': 'success',
                 'products': product.get_all()
                 }, 200
+
+
+@end_point.route('<product_id>')
+class SingleProduct(Resource):
+    @end_point.expect(product_id)
+    @end_point.doc('read specific product')
+    @end_point.marshal_with(product_message, code=200)
+    def get(self, product_id):
+        if not product.get(int(product_id)):
+            return {'message': 'Sorry this product is not found',
+                    'product': {}
+                    }, 404
+        return {'message': 'success',
+                'product': product.get(int(product_id))
+                }, 200
+
