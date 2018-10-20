@@ -36,3 +36,8 @@ class Product(Resource):
         return {'message': 'success',
                 'product': product.get(product.id)
                 }, 201
+
+
+@end_point.route('<product_id>')
+class SingleProduct(Resource):
+    pass
