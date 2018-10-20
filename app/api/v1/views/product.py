@@ -63,3 +63,4 @@ class SingleProduct(Resource):
         return {'message': 'success',
                 'product': product.get(int(product_id))
                 }, 200
+

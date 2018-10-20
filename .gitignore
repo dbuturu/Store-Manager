@@ -1,4 +1,3 @@
-
 __pycache__/
 *.py[cod]
 *$py.class
@@ -32,3 +31,4 @@ venv.bak/
 .bashrc
 .idea/
 .vscode/
+
