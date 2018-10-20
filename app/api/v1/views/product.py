@@ -11,7 +11,6 @@ end_point = Namespace('products', description='products resources')
 product_id = fields.Integer(description="The products id")
 
 a_product = end_point.model('product', {
-    'id': product_id,
     'name': fields.String(required=True, description="The products name"),
     'cost': fields.Integer(required=True, description="The products cost"),
     'amount': fields.Integer(required=True, description="The amount of the product")
@@ -19,7 +18,9 @@ a_product = end_point.model('product', {
 
 products = end_point.model('products', {product_id: fields.Nested(a_product)})
 
-message = end_point.model('message', {
+message = end_point.model('message', {'message': fields.String(required=True, description="success or fail message")})
+
+product_message = end_point.model('product message', {
     'message': fields.String(required=True, description="success or fail message"),
     'product': fields.Nested(a_product)
 })
@@ -29,7 +30,7 @@ message = end_point.model('message', {
 class Product(Resource):
     @end_point.expect(a_product)
     @end_point.doc('create a product')
-    @end_point.marshal_with(message, code=201)
+    @end_point.marshal_with(product_message, code=201)
     def post(self):
         data = end_point.payload
         product.add(data['name'], data['cost'], data['amount'])
@@ -37,7 +38,28 @@ class Product(Resource):
                 'product': product.get(product.id)
                 }, 201
 
+    @end_point.doc('read all products')
+    # @end_point.marshal_with(products, code=200)
+    def get(self):
+        if not product.get_all():
+            return {'message': 'Sorry no products found',
+                    'product': {}
+                    }, 404
+        return {'message': 'success',
+                'products': product.get_all()
+                }, 200
+
 
 @end_point.route('<product_id>')
 class SingleProduct(Resource):
-    pass
+    @end_point.expect(product_id)
+    @end_point.doc('read specific product')
+    @end_point.marshal_with(product_message, code=200)
+    def get(self, product_id):
+        if not product.get(int(product_id)):
+            return {'message': 'Sorry this product is not found',
+                    'product': {}
+                    }, 404
+        return {'message': 'success',
+                'product': product.get(int(product_id))
+                }, 200
