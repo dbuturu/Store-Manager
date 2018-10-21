@@ -28,4 +28,12 @@ sale_message = end_point.model('sale message', {
 
 @end_point.route('')
 class Sale(Resource):
-    pass
+    @end_point.expect(a_sale)
+    @end_point.doc('create a sale')
+    @end_point.marshal_with(sale_message, code=201)
+    def post(self):
+        data = end_point.payload
+        sale.add(data['product_id'], data['name'], data['cost'], data['amount'])
+        return {'message': 'success',
+                'sale': sale.get(sale.id)
+                }, 201
