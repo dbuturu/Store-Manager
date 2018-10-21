@@ -1,16 +1,13 @@
-from app.api.v1.models.product import Product
-product = Product()
-
 class Sale:
-    sales = {}
-    length = 0
-
     def __init__(self):
-        pass
+        self.sales = {}
+        self.length = 0
+        self.id = 0
+        self.product_id = 0
+        self.name = ''
+        self.cost = 0
 
     def add(self, product_id, name, cost, amount):
-        # if not self.sale(product_id,amount):
-        #     return self
         self.length += 1
         self.id = self.length
         self.product_id = product_id
@@ -23,10 +20,6 @@ class Sale:
         }
         return self
 
-    def sale(self, product_id, amount):
-        item = product.get(product_id)
-        print(item['amount'])
-
     def get(self, id):
         sale = self.sales[id]
         return {
@@ -38,8 +31,10 @@ class Sale:
     def get_all(self):
         return self.sales
 
-    def update(self, data):
-        self.sales[data.id].update(data)
+    def update(self, id, data):
+        if id:
+            self.sales[id].update(data)
 
     def delete(self, id):
-        self.sales.pop(id)
+        if id:
+            self.sales.pop(id)
