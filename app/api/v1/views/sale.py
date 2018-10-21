@@ -16,7 +16,10 @@ a_sale = end_point.model('sale', {
     'amount': fields.Integer(description="The amount of items to be sold")
 })
 
-sales = end_point.model('sales', {sale_id: fields.Nested(a_sale)})
+sales = end_point.model('sales', {
+    'message': fields.String(required=True, description="success or fail message"),
+    'sales': fields.Nested({'sale_id': fields.Nested(a_sale)})
+})
 
 message = end_point.model('message', {'message': fields.String(required=True, description="success or fail message")})
 
