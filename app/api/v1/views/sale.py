@@ -39,7 +39,7 @@ class Sale(Resource):
                 }, 201
 
     @end_point.doc('read all sales')
-    # @end_point.marshal_with(sales, code=200)
+    @end_point.marshal_with(sales, code=200)
     def get(self):
         return {'message': 'success',
                 'sales': sale.get_all()
