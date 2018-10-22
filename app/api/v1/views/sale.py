@@ -48,3 +48,13 @@ class Sale(Resource):
                 'sales': sale.get_all()
                 }, 200
 
+
+@end_point.route('<sale_id>')
+class SingleSale(Resource):
+    @end_point.expect(sale_id)
+    @end_point.doc('read all sales')
+    @end_point.marshal_with(sale_message, code=200)
+    def get(self, sale_id):
+        return {'message': 'success',
+                'sale': sale.get(int(sale_id))
+                }, 200
