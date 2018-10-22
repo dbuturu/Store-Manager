@@ -16,7 +16,10 @@ a_sale = end_point.model('sale', {
     'amount': fields.Integer(description="The amount of items to be sold")
 })
 
-sales = end_point.model('sales', {sale_id: fields.Nested(a_sale)})
+sales = end_point.model('sales', {
+    'message': fields.String(required=True, description="success or fail message"),
+    'sales': fields.Nested({'sale_id': fields.Nested(a_sale)})
+})
 
 message = end_point.model('message', {'message': fields.String(required=True, description="success or fail message")})
 
@@ -37,3 +40,11 @@ class Sale(Resource):
         return {'message': 'success',
                 'sale': sale.get(sale.id)
                 }, 201
+
+    @end_point.doc('read all sales')
+    @end_point.marshal_with(sales, code=200)
+    def get(self):
+        return {'message': 'success',
+                'sales': sale.get_all()
+                }, 200
+
