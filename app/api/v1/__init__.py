@@ -1,7 +1,6 @@
 from flask_restplus import Api
 from flask import Blueprint
 
-from app import jwt
 from app.api.v1.views.product import end_point as products_end_points
 from app.api.v1.views.sale import end_point as sales_end_points
 from app.api.v1.views.user import end_point as users_end_points

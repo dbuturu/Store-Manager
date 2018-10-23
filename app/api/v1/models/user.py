@@ -1,4 +1,4 @@
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 users = {}
 
@@ -26,11 +26,13 @@ class User:
         }
 
     def sign_in(self, username: str, password: str):
-        # jwt
-        return self.users.fromkeys(password) == username
-
-    def sign_out(self, username):
-        pass
+        if not self.users[username]:
+            return False
+        user = self.users[username]
+        return check_password_hash(
+            user['password'],
+            password
+        )
 
     def get(self, username: str):
         return self.users.get(username)
