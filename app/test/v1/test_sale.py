@@ -17,6 +17,7 @@ class TestSale(TestCase):
             path, data=data, content_type='application/json')
         self.assertEqual(201, result.status_code)
         self.assertEqual('success', result.json['message'])
+        print(result.json)
         self.assertTrue(result.json['sale'])
 
     def test_get_all_sales(self):
@@ -24,6 +25,7 @@ class TestSale(TestCase):
         result = self.client.get(path)
         self.assertEqual(200, result.status_code)
         self.assertEqual('success', result.json['message'])
+        print(result.json)
         self.assertTrue(result.json['sales'])
 
     def test_get_sales(self):
@@ -31,4 +33,5 @@ class TestSale(TestCase):
         result = self.client.get(path)
         self.assertEqual(200, result.status_code)
         self.assertEqual('success', result.json['message'])
+        print(result.json)
         self.assertTrue(result.json['sale'])

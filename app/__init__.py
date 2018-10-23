@@ -1,6 +1,7 @@
 from flask import Flask
 from instance.config import app_config
 from werkzeug.contrib.fixers import ProxyFix
+from flask_jwt_extended import JWTManager
 
 
 def create_app(config_name):
@@ -12,6 +13,9 @@ def create_app(config_name):
 
     app.wsgi_app = ProxyFix(app.wsgi_app)
 
+    jwt.init_app(app)
+
     from app.api.v1 import v1
     app.register_blueprint(v1)
+    jwt = JWTManager(app)
     return app

@@ -9,11 +9,30 @@
 
 ## Run in Postman
 
+
+
 ### Features
 
-### Installing
 
-#### Set up database and virtual environment & Database
+
+### Installing
+Clone this repository
+git clone https://github.com/dbuturu/Store-Manager.git
+Check out this branch.
+git checkout ch-Get_specific_sale-API-#161353201
+Create a virtual environment
+virtualenv venv
+Active it by a run active command
+source venv/bin/activate
+source venv/Scripts/activate
+venv\activate.bat
+Install dependencies
+pip install -r requirements.txt
+Start the application.
+python run.py
+Run Tests
+pytest -v
+#### Set up virtual environment
 
 #### Storing environment variables 
 

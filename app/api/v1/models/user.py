@@ -1,0 +1,47 @@
+from werkzeug.security import generate_password_hash
+
+users = {}
+
+class User:
+    def __init__(self):
+        self.users = users
+        self.username = ''
+        self.first_name = ''
+        self.last_name = ''
+        self.password = ''
+        self.email = ''
+
+    def add(self, username, first_name, last_name, password, email):
+        self.username = username
+        self.first_name = first_name
+        self.last_name = last_name
+        self.password = generate_password_hash(password)
+        self.email = email
+        self.users[self.username] = {
+            'username': self.username,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'password': self.password,
+            'email': self.email 
+        }
+
+    def sign_in(self, username: str, password: str):
+        # jwt
+        return self.users.fromkeys(password) == username
+
+    def sign_out(self, username):
+        pass
+
+    def get(self, username: str):
+        return self.users.get(username)
+
+    def get_all(self):
+        return self.users
+
+    def update(self, username, user):
+        if username:
+            self.users.update({user.get('username'): user})
+
+    def delete(self, username: str):
+        if username:
+            self.users.pop(username)
