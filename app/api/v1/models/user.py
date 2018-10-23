@@ -10,23 +10,26 @@ class User:
         self.last_name = ''
         self.password = ''
         self.email = ''
+        self.role = ''
 
-    def add(self, username, first_name, last_name, password, email):
+    def add(self, username, first_name, last_name, password, email, role):
         self.username = username
         self.first_name = first_name
         self.last_name = last_name
         self.password = generate_password_hash(password)
         self.email = email
+        self.role = role
         self.users[self.username] = {
             'username': self.username,
             'first_name': self.first_name,
             'last_name': self.last_name,
             'password': self.password,
-            'email': self.email 
+            'email': self.email,
+            'role': self.role
         }
 
     def sign_in(self, username: str, password: str):
-        if not self.users[username]:
+        if not self.users.get(username):
             return False
         user = self.users[username]
         return check_password_hash(

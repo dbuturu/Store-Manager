@@ -24,7 +24,8 @@ a_user = end_point.model('user', {
     'username': username,
     'first_name': fields.String(required=True, description="The user's first name"),
     'last_name': fields.String(required=True, description="The user's last name"),
-    'email': fields.String(required=True, description="The user's email")
+    'email': fields.String(required=True, description="The user's email"),
+    'role': fields.String(required=True, description="The user's role")
 })
 
 new_user = end_point.model('user', {
@@ -32,7 +33,8 @@ new_user = end_point.model('user', {
     'first_name': fields.String(required=True, description="The user's first name"),
     'last_name': fields.String(required=True, description="The user's last name"),
     'password': fields.String(required=True, description="The user's password"),
-    'email': fields.String(required=True, description="The user's email")
+    'email': fields.String(required=True, description="The user's email"),
+    'role': fields.String(required=True, description="The user's role")
 })
 
 users = end_point.model('users', {
@@ -45,7 +47,7 @@ message = end_point.model('message', {
 
 user_message = end_point.model('user message', {
     'message': fields.String(required=True, description="success or fail message"),
-    'user': fields.Nested(a_user)
+    'user': fields.Nested(a_user, skip_none=True)
 })
 
 
@@ -63,7 +65,8 @@ class User(Resource):
             data['first_name'],
             data['last_name'],
             data['password'],
-            data['email']
+            data['email'],
+            data['role']
         )
         return {
             'message': 'success',
@@ -71,7 +74,7 @@ class User(Resource):
             }, 201
 
     @end_point.doc('read all users')
-    @end_point.marshal_with(users, code=200)
+    # @end_point.marshal_with(users, code=200)
     def get(self):
         if not user.get_all():
             return {'message': 'Sorry no users found',
@@ -139,9 +142,9 @@ class Login(Resource):
     def post(self):
         data = end_point.payload
         if not data:
-            return {"message": 'Could not singin unknown user'}, 400
-        username = data.get('username').strip
-        password = data.get('password').strip
+            return {"message": 'Could not sing in unknown user'}, 400
+        username = str.strip(data.get('username'))
+        password = str.strip(data.get('password'))
         if not username and password:
             return {"message": "Username or password missing"}, 206
         this_user = user.get(username)
@@ -150,7 +153,7 @@ class Login(Resource):
                 'token':create_access_token(identity=this_user),
                 'message':'Login successful!'
             }, 200
-        return {"message": 'Could not singin user'},401
+        return {"message": 'Could not sing in user'},401
 
 @end_point.route('logout/')
 class Logout(Resource):

@@ -20,12 +20,12 @@ def create_app(config_name):
     jwt = JWTManager(app)
 
     @jwt.user_claims_loader
-    def add_user_claims_loader(user_object):
-        return {'role': user_object['role']}
+    def add_user_claims_loader(user):
+        return {'role': user['role']}
 
     @jwt.user_identity_loader
-    def user_identity_loader(user_object):
-        return user_object["username"]
+    def user_identity_loader(user):
+        return user["username"]
 
     @jwt.token_in_blacklist_loader
     def token_in_blacklist_loader(decrypted_token):
