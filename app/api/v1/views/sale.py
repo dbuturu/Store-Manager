@@ -48,7 +48,7 @@ class Sale(Resource):
         )
         if not sale.get(sale.id):
             return {'message': 'Sorry could not add product'}, 404
-        return {'message': 'success',
+        return {'message': 'Sale order has been Successfully created',
                 'sale': sale.get(sale.id)
                 }, 201
 
@@ -59,7 +59,7 @@ class Sale(Resource):
             return {'message': 'Sorry no sales found',
                     'sales': {}
                     }, 404
-        return {'message': 'success',
+        return {'message': 'Sale orders has been Successfully found',
                 'sales': sale.get_all()
                 }, 200
 
@@ -74,7 +74,7 @@ class SingleSale(Resource):
     def get(self, sale_id):
         if not sale.get(int(sale_id)):
             return {'message': 'Sorry this sale is not found'}, 404
-        return {'message': 'success',
+        return {'message': 'Sale order has been Successfully found',
                 'sale': sale.get(int(sale_id))
                 }, 200
 
@@ -94,7 +94,7 @@ class SingleSale(Resource):
                     'sold_by': data['sold_by']
                 }):
             return {
-                'message': 'success',
+                'message': 'Sale order has been Successfully Update',
                 'sale': sale.get(int(sale_id))
             }, 200
         else:
@@ -110,7 +110,7 @@ class SingleSale(Resource):
         if not sale.get(int(sale_id)):
             return {'message': 'Sorry this sale is not found'}, 404
         if sale.delete(sale_id):
-            return {'message': 'success'}, 200
+            return {'message': 'Sale order has been Successfully Delete'}, 200
         else:
             return{
                 'message': 'Sorry could not delete this sale order'

@@ -69,7 +69,7 @@ class User(Resource):
             data['role']
         )
         return {
-            'message': 'success',
+            'message': 'User order has been Successfully added',
             'user': user.get(user.username)
             }, 201
 
@@ -81,7 +81,7 @@ class User(Resource):
             return {'message': 'Sorry no users found',
                     'user': {}
                     }, 404
-        return {'message': 'success',
+        return {'message': 'User order has been Successfully ',
                 'users': user.get_all()
                 }, 200
 
@@ -97,7 +97,7 @@ class SingleUser(Resource):
             return {'message': 'Sorry this user is not found',
                     'user': {}
                     }, 404
-        return {'message': 'success',
+        return {'message': 'User order has been Successfully ',
                 'user': user.get(username)
                 }, 200
 
@@ -118,7 +118,7 @@ class SingleUser(Resource):
         }
 
         if user.update(username, data):
-            return {'message': 'success',
+            return {'message': 'User order has been Successfully ',
                     'user': user.get(username)
                     }, 200
         else:
@@ -134,7 +134,7 @@ class SingleUser(Resource):
         if not user.get(username):
             return {'message': 'Sorry this user is not found'}, 404
         if user.delete(username):
-            return {'message': 'success'}, 200
+            return {'message': 'User order has been Successfully '}, 200
         else:
             return{
                 'message': 'Sorry could not delete this user'
@@ -170,5 +170,3 @@ class Logout(Resource):
         blacklist.add(json_token_id)
         if json_token_id in blacklist:
             return {'message': 'Logged out successfully'}, 200
-        else:
-            return {'message': 'Could not log out'}, 205

@@ -63,7 +63,6 @@ class SingleProduct(Resource):
         if not item:
             return {'message': 'Sorry this product is not found'}, 404
         return {
-            'message': 'success',
             'product': item
         }, 200
 
@@ -79,7 +78,7 @@ class SingleProduct(Resource):
                 'cost': req['cost'], 'amount': req['amount']}
         if product.update(product_id, data):
             return {
-                'message': 'success',
+                'message': 'Product has been Successfully Updated',
                 'product': product.get(int(product_id))
             }, 200
         else:
@@ -95,7 +94,7 @@ class SingleProduct(Resource):
         if not product.get(int(product_id)):
             return {'message': 'Sorry this product is not found'}, 404
         if product.delete(product_id):
-            return {'message': 'success'}, 200
+            return {'message': 'Product has been Successfully Deleted'}, 200
         else:
             return{
                 'message': 'Sorry could not delete this product'
