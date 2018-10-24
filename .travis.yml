@@ -8,6 +8,6 @@ before_install:
 install:
   - pip3 install -r requirements.txt
 script:
-    - py.test --cov=app tests/
+    - py.test --cov=app app/tests/
 after_success:
     - coveralls

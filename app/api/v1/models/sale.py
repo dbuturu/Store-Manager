@@ -14,7 +14,7 @@ class Sale:
         self.name = ''
         self.cost = 0
 
-    def add(self, product_id, name, cost, amount):
+    def add(self, product_id, name, cost, amount, sold_by):
         if not product.sale(product_id, amount):
             return self
         self.length += 1
@@ -22,6 +22,7 @@ class Sale:
         self.product_id = product_id
         self.name = name
         self.cost = cost * amount
+        self.sold_by = sold_by
         self.sales[self.id] = {
             'product_id': self.product_id,
             'name': self.name,
@@ -41,6 +42,12 @@ class Sale:
 
     def get_all(self):
         return self.sales
+
+    def get_sold_by(self,id):
+        if not self.sales.get(id):
+            return False
+        sale = self.sales[id]
+        return sale['sold_by']
 
     def update(self, id, data):
         if id:

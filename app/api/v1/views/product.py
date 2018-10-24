@@ -1,7 +1,8 @@
 from ..models.product import Product as ProductModel
 from flask_restplus import Resource, Namespace, fields
-from flask import request, jsonify
-import json
+from flask_jwt_extended import jwt_required
+
+from app import admin_required
 
 product = ProductModel()
 
@@ -26,6 +27,7 @@ product_message = end_point.model('product message', {
 
 @end_point.route('')
 class Product(Resource):
+    @admin_required
     @end_point.expect(a_product)
     @end_point.doc('Add a product')
     @end_point.marshal_with(product_message, code=201)
@@ -38,6 +40,7 @@ class Product(Resource):
                 'product': product.get(product.id)
                 }, 201
 
+    @jwt_required
     @end_point.doc('read all products')
     def get(self):
         if not product.get_all():
@@ -51,6 +54,7 @@ class Product(Resource):
 
 @end_point.route('<product_id>')
 class SingleProduct(Resource):
+    @jwt_required
     @end_point.expect(product_id)
     @end_point.doc('read specific product')
     @end_point.marshal_with(product_message, code=200)
@@ -63,6 +67,7 @@ class SingleProduct(Resource):
             'product': item
         }, 200
 
+    @admin_required
     @end_point.expect(product_id, a_product)
     @end_point.doc('update specific product')
     @end_point.marshal_with(product_message, code=200)
@@ -82,6 +87,7 @@ class SingleProduct(Resource):
                 'message': 'Sorry could not update this product'
             }
 
+    @admin_required
     @end_point.expect(product_id)
     @end_point.doc('delete specific product')
     @end_point.marshal_with(message, code=200)

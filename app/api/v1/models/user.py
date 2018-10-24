@@ -46,7 +46,9 @@ class User:
     def update(self, username, user):
         if username:
             self.users.update({user.get('username'): user})
+            return self
 
     def delete(self, username: str):
         if username:
             self.users.pop(username)
+            return self

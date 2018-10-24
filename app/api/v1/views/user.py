@@ -1,11 +1,13 @@
-from ..models.user import User as UserModel
 from flask_restplus import Resource, Namespace, fields
-import json
 from flask_jwt_extended import (
     jwt_required,
     create_access_token,
-    get_raw_jwt
+    get_raw_jwt,
+    get_jwt_identity
 )
+
+from app import admin_required
+from ..models.user import User as UserModel
 
 blacklist = set()
 
@@ -73,6 +75,7 @@ class User(Resource):
             'user': user.get(user.username)
             }, 201
 
+    @admin_required
     @end_point.doc('read all users')
     # @end_point.marshal_with(users, code=200)
     def get(self):
@@ -86,9 +89,10 @@ class User(Resource):
 
 @end_point.route('<username>')
 class SingleUser(Resource):
+    @jwt_required
     @end_point.expect(username)
     @end_point.doc('read all users')
-    @end_point.marshal_with(a_user, code=200)
+    @end_point.marshal_with(user_message , code=200)
     def get(self, username):
         if not user.get(username):
             return {'message': 'Sorry this user is not found',
@@ -98,12 +102,13 @@ class SingleUser(Resource):
                 'user': user.get(username)
                 }, 200
 
+    @jwt_required
     @end_point.expect(username, a_user)
     @end_point.doc('update specific user')
     @end_point.marshal_with(user_message, code=200)
     def put(self, username):
         req = end_point.payload
-        if not user.get(int(username)):
+        if not user.get(username):
             return {'message': 'Sorry this user is not found'}, 404
         data = {
             'username': req['username'],
@@ -115,13 +120,14 @@ class SingleUser(Resource):
 
         if user.update(username, data):
             return {'message': 'success',
-                    'user': user.get(int(username))
+                    'user': user.get(username)
                     }, 200
         else:
             return{
                 'message': 'Sorry could not update this user'
             }
 
+    @admin_required
     @end_point.expect(username)
     @end_point.doc('delete specific user')
     @end_point.marshal_with(message, code=200)
@@ -133,7 +139,7 @@ class SingleUser(Resource):
         else:
             return{
                 'message': 'Sorry could not delete this user'
-            }
+            }, 205
 
 @end_point.route('login/')
 class Login(Resource):
@@ -157,7 +163,12 @@ class Login(Resource):
 
 @end_point.route('logout/')
 class Logout(Resource):
+    @jwt_required
     def post(self):
+        print(get_raw_jwt(),get_jwt_identity())
         json_token_id = get_raw_jwt()['jti']
-        if blacklist.add(json_token_id):
+        blacklist.add(json_token_id)
+        if json_token_id in blacklist:
             return {'message': 'Logged out successfully'}, 200
+        else:
+            return {'message': 'Could not log out'}, 205

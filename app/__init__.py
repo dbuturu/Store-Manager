@@ -1,11 +1,33 @@
-from flask import Flask
+from flask import Flask, jsonify
 from instance.config import app_config
 from werkzeug.contrib.fixers import ProxyFix
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager, get_jwt_claims, verify_jwt_in_request, get_jwt_identity
+from functools import wraps
 
 from app.api.v1 import v1
 from app.api.v1.views.user import blacklist
 
+
+def admin_required(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        verify_jwt_in_request()
+        claims = get_jwt_claims()
+        if claims['roles'] != 'admin':
+            return jsonify(msg='Admins only'), 403
+        else:
+            return fn(*args, **kwargs)
+    return wrapper
+
+def owner_required(owner):
+    def decorator(fn):
+        def decorated(*args,**kwargs):
+            identity = get_jwt_identity()
+            if owner is identity:
+                return fn(*args,**kwargs)
+            return jsonify(msg='Admins and Owner only'), 403
+        return decorated
+    return decorator
 
 def create_app(config_name):
     app = Flask(__name__, instance_relative_config=True)
@@ -13,7 +35,6 @@ def create_app(config_name):
     app.config.from_pyfile('config.py')
     app.url_map.strict_slashes = False
     app.config['SWAGGER_UI_JSONEDITOR'] = True
-    app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access']
 
     app.wsgi_app = ProxyFix(app.wsgi_app)
 
