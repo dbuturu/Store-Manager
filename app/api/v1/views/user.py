@@ -1,12 +1,10 @@
-from flask_restplus import Resource, Namespace, fields
 from flask_jwt_extended import (
-    jwt_required,
     create_access_token,
-    get_raw_jwt,
-    get_jwt_identity
+    get_raw_jwt
 )
+from flask_restplus import Resource, Namespace, fields
 
-from app import admin_required
+from ..views import requires_permission
 from ..models.user import User as UserModel
 
 blacklist = set()
@@ -75,7 +73,7 @@ class User(Resource):
             'user': user.get(user.username)
             }, 201
 
-    @admin_required
+    @requires_permission('admin')
     @end_point.doc('read all users')
     # @end_point.marshal_with(users, code=200)
     def get(self):
@@ -87,9 +85,10 @@ class User(Resource):
                 'users': user.get_all()
                 }, 200
 
+
 @end_point.route('<username>')
 class SingleUser(Resource):
-    @jwt_required
+    @requires_permission('store attendant')
     @end_point.expect(username)
     @end_point.doc('read all users')
     @end_point.marshal_with(user_message , code=200)
@@ -102,7 +101,7 @@ class SingleUser(Resource):
                 'user': user.get(username)
                 }, 200
 
-    @jwt_required
+    @requires_permission('store attendant')
     @end_point.expect(username, a_user)
     @end_point.doc('update specific user')
     @end_point.marshal_with(user_message, code=200)
@@ -127,7 +126,7 @@ class SingleUser(Resource):
                 'message': 'Sorry could not update this user'
             }
 
-    @admin_required
+    @requires_permission('admin')
     @end_point.expect(username)
     @end_point.doc('delete specific user')
     @end_point.marshal_with(message, code=200)
@@ -141,6 +140,7 @@ class SingleUser(Resource):
                 'message': 'Sorry could not delete this user'
             }, 205
 
+
 @end_point.route('login/')
 class Login(Resource):
     @end_point.expect(credentials)
@@ -153,19 +153,19 @@ class Login(Resource):
         password = str.strip(data.get('password'))
         if not username and password:
             return {"message": "Username or password missing"}, 206
-        this_user = user.get(username)
         if user.sign_in(username, password):
             return {
-                'token':create_access_token(identity=this_user),
-                'message':'Login successful!'
+                'token': str(create_access_token(identity=username)),
+                'message': 'Login successful!'
             }, 200
-        return {"message": 'Could not sing in user'},401
+        return {"message": 'Could not sing in user'}, 401
 
+
+@end_point.header('Authorization: Bearer', 'JWT TOKEN', required=True)
 @end_point.route('logout/')
 class Logout(Resource):
-    @jwt_required
+    @requires_permission('store attendant')
     def post(self):
-        print(get_raw_jwt(),get_jwt_identity())
         json_token_id = get_raw_jwt()['jti']
         blacklist.add(json_token_id)
         if json_token_id in blacklist:

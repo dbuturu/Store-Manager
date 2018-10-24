@@ -18,7 +18,7 @@ class Product:
         self.name = name
         self.cost = cost
         self.amount = amount
-        print(self.id)
+
         self.products[self.id] = {
             'name': self.name,
             'cost': self.cost,
@@ -49,7 +49,7 @@ class Product:
         if not self.products[id]:
             return False
         item = self.products[id]
-        print(item, 'item is real')
+
         item['amount'] = amount
         self.update(id, item)
         return True
