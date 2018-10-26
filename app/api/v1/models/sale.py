@@ -1,18 +1,28 @@
+from .product import Product
+
+product = Product()
+
+sales = {}
+length = 0
+
 class Sale:
     def __init__(self):
-        self.sales = {}
-        self.length = 0
+        self.sales = sales
+        self.length = length
         self.id = 0
         self.product_id = 0
         self.name = ''
         self.cost = 0
 
-    def add(self, product_id, name, cost, amount):
+    def add(self, product_id, name, cost, amount, sold_by):
+        if not product.sale(product_id, amount):
+            return self
         self.length += 1
         self.id = self.length
         self.product_id = product_id
         self.name = name
         self.cost = cost * amount
+        self.sold_by = sold_by
         self.sales[self.id] = {
             'product_id': self.product_id,
             'name': self.name,
@@ -21,6 +31,8 @@ class Sale:
         return self
 
     def get(self, id):
+        if not self.sales.get(id):
+            return False
         sale = self.sales[id]
         return {
             'product_id': sale['product_id'],
@@ -31,10 +43,18 @@ class Sale:
     def get_all(self):
         return self.sales
 
+    def get_sold_by(self,id):
+        if not self.sales.get(id):
+            return False
+        sale = self.sales[id]
+        return sale['sold_by']
+
     def update(self, id, data):
         if id:
             self.sales[id].update(data)
+            return True
 
     def delete(self, id):
         if id:
             self.sales.pop(id)
+            return True
